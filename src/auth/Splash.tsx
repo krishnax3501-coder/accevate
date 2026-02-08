@@ -13,7 +13,7 @@ const Splash = ({ onFinish }: Props) => {
 
   return (
     <View style={styles.container}>
-      <Image source={require('../../assets/logoa.png')} resizeMode="contain" style={{width:500,height:500}}/>
+      <Image source={require('../../assets/logoa.png')} resizeMode="contain" style={{width:200,height:200}}/>
     </View>
   );
 };

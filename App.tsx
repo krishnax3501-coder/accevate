@@ -14,11 +14,11 @@ function App() {
   const isDarkMode = useColorScheme() === "dark";
   const [step, setStep] = useState<Step>("splash");
 
+
   const goLogin = useCallback(() => setStep("login"), []);
   const goOtp = useCallback(() => setStep("otp"), []);
   const goDashboard = useCallback(() => setStep("dashboard"), []);
 
-  // Decide initial route after splash
   const handleSplashFinish = useCallback(async () => {
     const token = await AsyncStorage.getItem("TOKEN");
     setStep(token ? "dashboard" : "login");
@@ -32,7 +32,7 @@ function App() {
         <Splash onFinish={handleSplashFinish} />
       )}
 
-      {step === "login" && <Login onSuccess={goOtp} />}
+      {step === "login" && <Login onSuccess={goOtp}/>}
 
       {step === "otp" && <Otp onSuccess={goDashboard} />}
 
