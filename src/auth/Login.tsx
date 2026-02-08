@@ -51,7 +51,6 @@ const Login = ({ onSuccess }: Props) => {
 
       if (response.data.status) {
         await Storage.setUserId(response.data.userid.toString());
-        set
         onSuccess(); 
       } else {
         Alert.alert(response.data.msg || "Invalid credentials, please try again.");
