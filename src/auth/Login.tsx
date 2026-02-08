@@ -13,7 +13,7 @@ const Login = ({ onSuccess }: Props) => {
   const passwordRef = useRef("");
 
   const login = useCallback(async () => {
-    const res = await api.post("/login", {
+    const res = await api.post("/login.php", {
       username: usernameRef.current,
       password: passwordRef.current,
     });

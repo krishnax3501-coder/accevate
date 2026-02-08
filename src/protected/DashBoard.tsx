@@ -14,7 +14,7 @@ const DashboardScreen = ({ onLogout }: Props) => {
   const loadDashboard = useCallback(async () => {
     const token = await Storage.getToken();
 
-    const res = await api.get("/dashboard", {
+    const res = await api.get("/dashboard.php", {
       headers: {
         Authorization: `Bearer ${token}`,
       },

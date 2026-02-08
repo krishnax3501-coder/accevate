@@ -15,7 +15,7 @@ const Otp
   const verifyOtp = useCallback(async () => {
     const userId = await Storage.getUserId();
 
-    const res = await api.post("/verify-otp", {
+    const res = await api.post("/verify_otp.php", {
       userId,
       otp: otpRef.current,
     });
@@ -41,5 +41,5 @@ const Otp
 };
 
 export default memo(Otp
-    
+
 );

@@ -1,12 +1,11 @@
 import React, { memo, useEffect } from "react";
-import { View, StyleSheet } from "react-native";
-import Logo from "../../assets/logoa.png";
+import { View, StyleSheet, Image } from "react-native";
 
 type Props = {
   onFinish: () => void;
 };
 
-const SplashScreen = ({ onFinish }: Props) => {
+const Splash = ({ onFinish }: Props) => {
   useEffect(() => {
     const timer = setTimeout(onFinish, 1500);
     return () => clearTimeout(timer);
@@ -14,18 +13,19 @@ const SplashScreen = ({ onFinish }: Props) => {
 
   return (
     <View style={styles.container}>
-      <Logo width={160} height={160} />
+      <Image source={require('../../assets/logoa.png')} resizeMode="contain" style={{width:500,height:500}}/>
     </View>
   );
 };
 
-export default memo(SplashScreen);
+export default memo(Splash);
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#fff",
-    justifyContent: "center",
-    alignItems: "center",
+    justifyContent:"center",
+    alignItems:"center"
+
   },
 });
